@@ -1,0 +1,15 @@
+# Uncomment to enable Azure Monitor OpenTelemetry
+# Ref: aka.ms/functions-azure-monitor-python 
+# azure-monitor-opentelemetry 
+
+# Azure Functions dependencies
+azure-functions
+
+# ETL script dependencies
+pandas>=2.0.0
+pyodbc>=4.0.39
+sqlalchemy>=2.0.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+numpy>=1.24.0
+azure-storage-blob>=12.19.0

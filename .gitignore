@@ -1,0 +1,53 @@
+# Environment variables (KRITIKUS!)
+.env
+*.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Azure Functions
+local.settings.json
+.python_packages/
+.venv/
+
+# Data files (túl nagyok)
+data/raw/*.csv
+data/raw/*.json
+*.csv
+*.xlsx
+*.pbix
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+*.key
+*.cert
