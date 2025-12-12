@@ -37,7 +37,6 @@ data/raw/*.csv
 data/raw/*.json
 *.csv
 *.xlsx
-*.pbix
 
 # Logs
 *.log
