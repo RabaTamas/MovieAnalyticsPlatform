@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 from dotenv import load_dotenv
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split, cross_val_score, KFold
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
@@ -93,12 +93,13 @@ y = target
 print(f"\n🧹 Cleaning data...")
 print(f"   Before: {len(X)} rows")
 
-# Fill NaN values
-X['runtime'].fillna(X['runtime'].median(), inplace=True)
-X['popularity'].fillna(0, inplace=True)
-X['vote_average'].fillna(0, inplace=True)
-X['vote_count'].fillna(0, inplace=True)
-X['studio_freq'].fillna(1, inplace=True)
+X = X.assign(
+    runtime=X['runtime'].fillna(X['runtime'].median()),
+    popularity=X['popularity'].fillna(0),
+    vote_average=X['vote_average'].fillna(0),
+    vote_count=X['vote_count'].fillna(0),
+    studio_freq=X['studio_freq'].fillna(1)
+)
 
 # Remove rows where target (revenue) is 0 or NaN
 valid_idx = (y > 0) & (y.notna())
@@ -179,7 +180,8 @@ print("\n" + "=" * 70)
 print("🔄 5-Fold Cross-Validation")
 print("=" * 70)
 
-cv_scores = cross_val_score(model, X, y, cv=5, scoring='r2')
+kf = KFold(n_splits=5, shuffle=True, random_state=42)
+cv_scores = cross_val_score(model, X, y, cv=kf, scoring='r2')
 
 print(f"\n📊 Cross-validation R² scores:")
 for i, score in enumerate(cv_scores, 1):

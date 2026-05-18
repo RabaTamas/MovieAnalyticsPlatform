@@ -6,15 +6,17 @@ from sqlalchemy import create_engine, text
 
 load_dotenv()
 
-# Azure Function environment detection
 if os.getenv('AZURE_FUNCTIONS_ENVIRONMENT'):
-    # Running in Azure Functions - use temp directory
     OUTPUT_DIR = "/tmp"
+elif os.getenv('AIRFLOW_HOME'):
+    # Running in Airflow Docker container
+    OUTPUT_DIR = "/opt/airflow/project/data/processed"
 else:
-    # Running locally - use project data/processed
+    # Running locally
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     OUTPUT_DIR = os.path.join(BASE_DIR, "data", "processed")
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # =============================================================================
 # CONFIGURATION

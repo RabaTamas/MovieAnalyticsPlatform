@@ -1,0 +1,27 @@
+name: 'movie_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'movie_analytics'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  movie_analytics:
+    staging:
+      +schema: dbt_staging
+      +materialized: view
+    dimensions:
+      +schema: dbt_dim
+      +materialized: table
+      +as_columnstore: false
+    facts:
+      +schema: dbt_fact
+      +materialized: table
+      +as_columnstore: false
+    aggregations:
+      +schema: dbt_agg
+      +materialized: table
+      +as_columnstore: false

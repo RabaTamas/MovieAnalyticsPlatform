@@ -1,0 +1,14 @@
+movie_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 17 for SQL Server'
+      server: "{{ env_var('AZURE_SQL_SERVER') }}"
+      port: 1433
+      database: "{{ env_var('AZURE_SQL_DATABASE') }}"
+      schema: dbo
+      username: "{{ env_var('AZURE_SQL_USERNAME') }}"
+      password: "{{ env_var('AZURE_SQL_PASSWORD') }}"
+      encrypt: true
+      trust_cert: true

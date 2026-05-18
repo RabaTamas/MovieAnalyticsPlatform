@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_movies
+    description: "Cleaned staging data from Staging_Movies table"
+    columns:
+      - name: movie_id
+        description: "Unique movie identifier"
+        tests:
+          - not_null
+      - name: title
+        description: "Movie title"
+        tests:
+          - not_null
+      - name: budget
+        description: "Movie budget in USD"
+        tests:
+          - not_null
+      - name: revenue
+        description: "Movie revenue in USD"
+        tests:
+          - not_null
+
+  - name: dim_genre
+    description: "Genre dimension table"
+    columns:
+      - name: genre_name
+        description: "Genre name"
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_movies
+    description: "Movies fact table with foreign keys to dimensions"
+    columns:
+      - name: movie_id
+        description: "Unique movie identifier"
+        tests:
+          - not_null
+      - name: budget
+        description: "Movie budget in USD"
+        tests:
+          - not_null
+      - name: revenue
+        description: "Movie revenue in USD"
+        tests:
+          - not_null
+
+  - name: agg_by_genre
+    description: "Aggregated metrics by genre"
+    columns:
+      - name: genre_name
+        description: "Genre name"
+        tests:
+          - not_null
+          - unique
