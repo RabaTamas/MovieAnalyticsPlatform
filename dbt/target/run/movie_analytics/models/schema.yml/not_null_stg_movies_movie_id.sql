@@ -11,7 +11,7 @@
 
   
   EXEC('create view 
-    [dbo].[testview_dbc332af2abe16a685c8bc84214e1bc8_5797]
+    [dbo].[testview_dbc332af2abe16a685c8bc84214e1bc8_16219]
    as 
     
     
@@ -35,10 +35,10 @@ where movie_id is null
       then 'true' else 'false' end as should_error
   from (
     select * from 
-    [dbo].[testview_dbc332af2abe16a685c8bc84214e1bc8_5797]
+    [dbo].[testview_dbc332af2abe16a685c8bc84214e1bc8_16219]
   
   ) dbt_internal_test;
 
   EXEC('drop view 
-    [dbo].[testview_dbc332af2abe16a685c8bc84214e1bc8_5797]
+    [dbo].[testview_dbc332af2abe16a685c8bc84214e1bc8_16219]
   ;')

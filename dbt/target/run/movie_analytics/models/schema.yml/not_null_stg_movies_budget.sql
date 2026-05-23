@@ -11,7 +11,7 @@
 
   
   EXEC('create view 
-    [dbo].[testview_cd74ac7d00316e28cdffd5aabc4f46c2_4762]
+    [dbo].[testview_cd74ac7d00316e28cdffd5aabc4f46c2_17723]
    as 
     
     
@@ -35,10 +35,10 @@ where budget is null
       then 'true' else 'false' end as should_error
   from (
     select * from 
-    [dbo].[testview_cd74ac7d00316e28cdffd5aabc4f46c2_4762]
+    [dbo].[testview_cd74ac7d00316e28cdffd5aabc4f46c2_17723]
   
   ) dbt_internal_test;
 
   EXEC('drop view 
-    [dbo].[testview_cd74ac7d00316e28cdffd5aabc4f46c2_4762]
+    [dbo].[testview_cd74ac7d00316e28cdffd5aabc4f46c2_17723]
   ;')

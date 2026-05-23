@@ -11,7 +11,7 @@
 
   
   EXEC('create view 
-    [dbo].[testview_11ac1716407836e9688097eef99249f7_17401]
+    [dbo].[testview_11ac1716407836e9688097eef99249f7_18788]
    as 
     
     
@@ -35,10 +35,10 @@ where genre_name is null
       then 'true' else 'false' end as should_error
   from (
     select * from 
-    [dbo].[testview_11ac1716407836e9688097eef99249f7_17401]
+    [dbo].[testview_11ac1716407836e9688097eef99249f7_18788]
   
   ) dbt_internal_test;
 
   EXEC('drop view 
-    [dbo].[testview_11ac1716407836e9688097eef99249f7_17401]
+    [dbo].[testview_11ac1716407836e9688097eef99249f7_18788]
   ;')

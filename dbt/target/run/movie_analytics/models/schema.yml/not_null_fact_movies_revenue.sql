@@ -11,7 +11,7 @@
 
   
   EXEC('create view 
-    [dbo].[testview_990441e5efcfb88b09b39f4bde9f7303_16064]
+    [dbo].[testview_990441e5efcfb88b09b39f4bde9f7303_10675]
    as 
     
     
@@ -35,10 +35,10 @@ where revenue is null
       then 'true' else 'false' end as should_error
   from (
     select * from 
-    [dbo].[testview_990441e5efcfb88b09b39f4bde9f7303_16064]
+    [dbo].[testview_990441e5efcfb88b09b39f4bde9f7303_10675]
   
   ) dbt_internal_test;
 
   EXEC('drop view 
-    [dbo].[testview_990441e5efcfb88b09b39f4bde9f7303_16064]
+    [dbo].[testview_990441e5efcfb88b09b39f4bde9f7303_10675]
   ;')
