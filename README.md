@@ -1,6 +1,6 @@
 # Movie Analytics Platform
 
-Teljes körű data engineering és üzleti intelligencia pipeline a filmipar adatainak elemzésére. A projekt az Üzleti Intelligencia tárgy (2025 ősz) házi feladatának kiterjesztett verziója, amelyet a Data Engineering a gyakorlatban tárgy követelményeinek megfelelően bővítettük Apache Airflow orkesztrációval és dbt transzformációs réteggel.
+Teljes körű data engineering és üzleti intelligencia pipeline a filmipar adatainak elemzésére. A projekt az Üzleti Intelligencia tárgy (2025 ősz) házi feladatának kiterjesztett verziója, amelyet a Data Engineering a gyakorlatban tárgy követelményeinek megfelelően bővítettem Apache Airflow orkesztrációval és dbt transzformációs réteggel.
 
 ## Technológiai stack
 
